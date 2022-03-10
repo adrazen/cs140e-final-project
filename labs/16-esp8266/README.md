@@ -15,7 +15,7 @@ ESP8266-based boards. We will be using the ESP-01 variant, which is the first
 and simplest board using the ESP8266, and costs under three dollars. Here is what
 the ESP8266 looks like:
 <p float="left">
-  <img src="images/esp8266-simple-image.jpg" width="200" />
+  <img src="images/esp8266-simple-image.jpeg" width="200" />
 </p>
 
 The most important rule for today:
@@ -71,7 +71,7 @@ see that `esp-shell` gives an `OK` when you type `AT`.
      (red arrow) is pushed to the left:
 
 <p float="left">
-  <img src="images/esp-prog.jpg" width="450" />
+  <img src="images/esp8266-prog.jpg" width="450" />
 </p>
 
      The programmer is cool since it makes it easy to update the ESP's
