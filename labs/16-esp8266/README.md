@@ -18,31 +18,25 @@ the ESP8266 looks like:
   <img src="images/esp8266-simple-image.jpeg" width="200" />
 </p>
 
-The most important rule for today:
+In order to program our ESP8266 so that it can communicate with our computer, we 
+will be using the **`AT` Commands**, which means will communicate with the ESP8266
+by sending it human-readable character string commands. The first token of each of
+these commands will be `AT` (hence the name). For instance, to start a TCP connecion,
+we will send a `AT+CIPSTART` command to the ESP to tell it to _start_ the connection.
+In order for our ESP to successfully communicate with the pi, we need to use the 
+same 8n1 UART protocol that we have been using throughout this course. 
+
+As we work through today's lab, the most important rule for today is:
 
    ***MAKE SURE YOU ONLY CONNECT the ESP TO 3V (NOT 5V) power***
 
-This lab we will use the ESP8266 chip (version: esp-01) to connect your
-pi to your laptop and/or to another pi.
-
-The ESP8266 is a cheap, reasonable way to add wireless to various
-projects assuming they don't need extremely low latency or high bandwidth.
-It can can assign wireless IP addresses (be a dhcp server), a webserver
-and communicate using TCP or UDP.
-
-We will control the ESP8266 using `AT` commands, which means we will
-send the ESP8266 human-readable character string commands (the first
-token will be an `AT`, hence the name) using the same 8n1 UART protocol
-we use to communicate with your pi.  You should look in the `docs`
-directory and read:
-
 Workflow:
 
- 0. Get two esp8266's, one programmer (see below) and another tty-USB device.
- 1. Make sure both esp's work.
- 2. See how to communicate on Unix.
- 3. Convert the code to communicte on the pi.
- 4. Do something cool.
+ 0. Get your hardware: two ESP8266's, one programmer, and another tty-USB device.
+ 2. Make sure both ESP's work.
+ 3. See how to communicate on Unix.
+ 4. Convert the code to communicte on the pi.
+ 5. Do something cool.
 
 #### Checkoff
 
@@ -58,8 +52,26 @@ Deliverables: today is kind of a light lab:
 ------------------------------------------------------------------------------
 ### Part 0: Make sure your esp8266's work
 
-Before doing anything, make sure that the `esp8266` device you have
-actually works.
+Before doing anything, make sure you have everything you need and that the 
+`ESP8266` device you have actually works.
+
+Here's what you need: 
+	1. Two ESP8266. An ESP looks like this: 
+	<p float="left">
+  <img src="images/esp8266-simple-image.jpeg" width="200" />
+	</p>
+	
+	2. One programmer. In order to be able to add programming to the ESP device, 
+	you need some way to connect it to your computer. This is how you do it!
+	<p float="left">
+  <img src="images/esp-programmer.jpeg" width="300" />
+	</p>
+	
+	3. One TTY-USB device
+	<p float="left">
+  <img src="images/usb-to-ttl.jpeg" width="300" />
+	</p>
+	
 
 #### A. Quick test hardware  with the programmer
 
@@ -280,7 +292,13 @@ works with `libpi`.
      to get an idea of what to do.
 
 ------------------------------------------------------------------------------
-### Part 3: do some kind of extension.
+### Part 3: run a web server through your esp.
+
+TO DO
+
+
+------------------------------------------------------------------------------
+### Part 4: do some kind of extension.
 
 #### if your final project needs networking, try that.
 
