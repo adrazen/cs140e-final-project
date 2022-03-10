@@ -1,4 +1,22 @@
 ## Simple networking with the ESP8266
+------------------------------------------------------------------------------
+### Introduction
+
+Today's lab is about setting up a simple networking protocol to connect your 
+pi to your laptop _or_ to connect your pi to another pi. The **ESP8266** is 
+a wifi SOC ("system on a chip") that has a built-in TCP/IP networking software.
+Simply put, this means that all of the components needed to run a bare-bones 
+wifi network are found on the ESP8266 chip itself. Thus, the ESP8266 is a cheap, 
+reasonable way to add wireless connectivity to various projects assuming they 
+don't need extremely low latency or high bandwidth. You can use a ESP82666 chip 
+to: be a DHCP server (which is responsible for assigning wireless IP addresses), 
+be a web server, and to communicate using TCP or UDP. There are variest of 
+ESP8266-based boards. We will be using the ESP-01 variant, which is the first
+and simplest board using the ESP8266, and costs under three dollars. Here is what
+the ESP8266 looks like:
+<p float="left">
+  <img src="images/esp-loopback.jpg" width="450" />
+</p>
 
 The most important rule for today:
 
