@@ -71,7 +71,7 @@ see that `esp-shell` gives an `OK` when you type `AT`.
      (red arrow) is pushed to the left:
 
 <p float="left">
-  <img src="images/esp8266-prog.jpg" width="450" />
+  <img src="images/esp8266-simple-image.jpeg" width="450" />
 </p>
 
      The programmer is cool since it makes it easy to update the ESP's
