@@ -12,6 +12,8 @@ assigned purpose (e.g. 5v, ground pins, etc...). We can use the pi
 to control these GPIO pins as needed.
 
 
+#### So _how_ do we use the pi to configure the pins?
+
 (Note: all page numbers refer to the Broadcom BCM2835 document in the 
 `docs` directory: `BCM2835-ARM-Peripherals.annot.pdf`)
 
