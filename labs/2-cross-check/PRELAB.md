@@ -18,7 +18,7 @@ We're writing out the prelab.  For the momemt, you should look at:
    4. `02-tracing-linux` does the same for linux.  AFAIK MacOS's linker  
       does not support this option.
 
-   4. A quick and dirty `Makefile` [tutorial](http://nuclear.mutantstargoat.com/articles/make/).
+   4. A quick and dirty `Makefile` [tutorial](http://nuclear.mutantstargoat.com/articles/make/). From here on out, making small modifications to Makefiles will be a fairly common aspect of our labs (no need to be an expert, but this tutorial will be a useful read).
 
 If you're going to modify these, please copy the directory --- I'm
 still modifying and playing around with the code, so you'd get conflicts
@@ -43,7 +43,7 @@ interesting tricks:
 
 Similar to how you added your local `~/bin` directory to your shell's path
 on the first lab, today you're going to edit your shell configuration file
-(e.g., `.tcshrc`, `.bash_profile`, etc) to set set an environment variable
+(e.g., `.tcshrc`, `.bash_profile`, `.zshrc` etc) to set set an environment variable
 `CS140E_PATH` to contain where you have your repository.
 
 E.g., for me, since I'm running `tcsh` I edit my `.tcshrc` file and add:
@@ -51,7 +51,7 @@ E.g., for me, since I'm running `tcsh` I edit my `.tcshrc` file and add:
 
     setenv CS140E_2022_PATH /home/engler/class/cs140e-22win/
 
-To the end of it.  If you use `bash` you'll do an:
+To the end of it.  If you use `bash`/`zsh`, in the relevant file you'll do an:
 
     export CS140E_2022_PATH=<path to your repo>
 
