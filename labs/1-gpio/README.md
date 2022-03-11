@@ -17,9 +17,10 @@ device memory. `GET32` and `PUT32` are your friends, and will be this whole quar
 
 It's in the PRELAB, but please be sure you have read [GPIO and device memory crash
 course](../../guides/GPIO.md) in the guides directory, and understand the examples.
-This document does a good job of jumpstarting the work you'll do today. In short, by the 
-end of this lab, you'll have written code to toggle a given GPIO pin
-on your pi between input/output, and on(high)/off(low).
+This document does a good job of jumpstarting the work you'll do today. 
+
+In short, by the end of this lab, you'll have written code to toggle
+a given GPIO pin on your pi between input/output, and on(high)/off(low).
 
 ##### Sign off
 
