@@ -56,18 +56,18 @@ Before doing anything, make sure you have everything you need and that the
 `ESP8266` device you have actually works.
 
 Here's what you need: 
-	1. Two ESP8266. An ESP looks like this: 
+1. Two ESP8266. An ESP looks like this: 
 <p float="left">
   <img src="images/esp8266-simple-image.jpeg" width="150" />
 </p>
 
-	2. One programmer. In order to be able to add programming to the ESP device, 
-	you need some way to connect it to your computer. This is how you do it!
+2. One programmer. In order to be able to add programming to the ESP device, 
+you need some way to connect it to your computer. This is how you do it!
 <p float="left">
   	<img src="images/esp-programmer.jpeg" width="150" />
 </p>
 
-	3. One TTY-USB device
+3. One TTY-USB device
 	
 <p float="left">
   	<img src="images/usb-to-ttl.jpeg" width="150" />
