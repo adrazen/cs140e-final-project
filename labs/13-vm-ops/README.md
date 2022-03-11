@@ -1,5 +1,59 @@
 ## Hooking translation up to hardware
 
+#### Introduction 
+
+In order for a virtual memory system to work correctly, the operating system
+needs to be able to successfully communicate with the hardware. Even if you 
+have a well-designed address translation mechanism (as we now do!), the MMU 
+needs to be correctly configured and all of the necessary variables need to
+be in the right place. You can think of this lab as getting all the ingredients
+in the right place, before following the recipe and cooking the meal. (Our 
+last lab focused on curating the recipe, and this lab will focus on getting
+the ingredients in the right place in the right qunatities.)
+
+Here are the three key steps to correctly configuring the MMU:
+
+   1. Setting up domains. Domains are the primary access control mechanisms 
+      for a region of memory. A domain defines the conditions under which a
+      memory access can proceed. There are 16 different domains in the ARMv6.
+      For setting up the domains, you will manipulate the Domain Access 
+      Control Register. 
+      
+      The relevant routine you will implement for this part is: 
+      `void cp15_domain_ctrl_wr(uint32_t dom_reg)`
+      
+   2. Storing the location of the page table in the right place in memory. 
+      In order to do this, we need to set up the page table register and set 
+      the Address Space Identification (ASID). The page table register 
+      (`TTBR0`) will store the base address of the the page table, so that 
+      the MMU knows where to look whenever it needs to do an address
+      translation. Thus, in order to complete this step, you will manipulate
+      the Translation Table Base Register. 
+      
+      The relevant routine you will implement for this part is: 
+      `void cp15_set_procid_ttbr0(uint32_t proc_and_asid, fld_t *pt)`
+      
+   3. Turning the MMU on and off, and resetting the MMU. In order for the 
+      MMU system to work, we need a way to turn it on and off. For turning 
+      the MMU off and on, we will manipulate the CP15 Control Register. For
+      resetting the MMU, we essnetially want to return the MMU to a "default"
+      state. To do this, we will simply wipe the MMU's memory by clearng
+      the caches. 
+      
+      The relevant routines you will implement for this part are: 
+      `void mmu_reset(void)`, `void mmu_disable_set_asm(cp15_ctrl_reg1_t c)`
+      and `void mmu_enable_set_asm(cp15_ctrl_reg1_t c)`
+
+This lab can seem very intimidating at first, especially given the sheer 
+amount of assembly that needs to be written. However, one way to break 
+this lab down is to remember that you will only be modifying three registers:
+the Domain Access Control Register, the Control Register, and the Translation
+Table Register. When modifying these registers, you only have two options: 
+reading,cand writing. Ultimately, this limits the set of possible things 
+you can do. 
+
+------------------------------------------------------------------------
+
 ***NOTE***:
    - We added [a cheat sheet for B2](MEMORY-ORDER-cheatsheet.md).
      This has a useful, hopefully correct distillation of the rules.  
