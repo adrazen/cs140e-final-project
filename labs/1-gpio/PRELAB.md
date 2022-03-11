@@ -12,7 +12,7 @@ You likely have a short somewhere and in the worst-case can fry your laptop.
 ### Reading before lab:
 
   1. Read through the [GPIO and device memory crash course](../../guides/GPIO.md) 
-     in the guides directory.
+     in the guides directory. You should have the Broadcom document open so you can go through the examples in the crash course (`../../docs/BCM2835-ARM-Peripherals.annot.pdf`).
 
   2. After doing so, read through pages 4--7 and 91---96 of the broadcom
      document (`../../docs/BCM2835-ARM-Peripherals.annot.pdf`) to see what
