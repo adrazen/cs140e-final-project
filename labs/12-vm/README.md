@@ -2,6 +2,12 @@
 
 #### Introduction
 
+When a program accesses memory, it does not know or care where the physical 
+memory backing the address is stored. Instead, it relies on the operating 
+system and the hardware to work together to locate the right physical address 
+and thus provide access to the data it wants. This mapping from physical 
+address to virtual addresses is the focus of this lab. 
+
 In this lab, we will implement the necessary infrastructure for a Memory
 Managment Unit (MMU). A MMU has _two_ important functions: 
    1. Translating virtual addresses to physical addresses
@@ -23,21 +29,17 @@ will map to a single section (whose information is stored in the First
 Level Descriptor) or will be marked as invalid. For this lab, there is a 
 `fld_t` struct to store all of the information for a First-Level Descriptor.
 
-Here is a diagram of how the Page Table and Page Table Entries look in the 
-ARMv6 vitual memory system:
-
-<table><tr><td>
-  <img src="images/page-table-diagram.png"/>
-</td></tr></table>
-
-
 For the second function (controlling memory access permissions), the MMU 
 is responsible for "error checking" memory access in order to prevent 
 undesirable behavior, namely faults. In the case that a fault is about to 
-happen as a result of memory access, the MMU will abort the access request
-and signal the fault condition to the CPU. In general, aborts resulting 
-from data accesses result in data aborts and are acted upon by the CPU 
-immediately. Thus, data aborts will result when the MMU detects an error. 
+happen as a result of memory access, the MMU signal the fault condition 
+to the CPU. In general, aborts resulting from data accesses result in data 
+aborts and are acted upon by the CPU immediately. Thus, data aborts will 
+result when the MMU detects an error. 
+
+In the case that a data abort results from a memory access error, there are 
+ultimately two possible outcomes: 1) remedy the error if possible, or 2) 
+abort the access request. 
 
 The end goal of this lab will be to get a simple "hello world" version of 
 virtual memory working. 
@@ -153,8 +155,9 @@ The above is pretty much all we will do:
 ----------------------------------------------------------------------
 ## Part 0: define the first_level_descriptor structure.
 
-This is a bit basic, but it's good practice.  You'll need to finish the
-`struct first_level_descriptor` in file `armv6-vm.h` based on the PTE
+This is a bit basic, but it's good practice. This will begin the setup 
+for setting up the entries in the file entry table. You'll need to finish 
+the`struct first_level_descriptor` in file `armv6-vm.h` based on the PTE
 layout given on B4-27 (screenshot below):
 
   - We've defined fields for the section base address, `nG`, `S`,
@@ -237,8 +240,10 @@ The document you'll need for this part is:
 
 ##### implement `mmu_section`
 
-Implement the `mmu_section` routine we used in Part 0.  You'll likely
-want to build the `fld_set_base_addr` helper.
+Implement the `mmu_section` routine we used in Part 0. This routine will
+be responsible for mapping a given memory section from a physical address
+to a virtual address. This mapping will be stored as an entry in the page
+table. You'll likely want to build the `fld_set_base_addr` helper.
 
 The code you wrote then should behave the same.  You'll want to figure
 out what all the bits do.  (Hint: most will be set to 0s.)
@@ -251,9 +256,12 @@ Useful pages:
   - B4-10: Domain permissions.
   - B4-29: translation of a 1MB section.
 
-The following screenshots are taken from the B4 section, but we inline
-them for easy reference:
+At the end, your code should align with the following diagram of how the 
+Page Table and Page Table Entries look in the ARMv6 vitual memory system:
 
+<table><tr><td>
+  <img src="images/page-table-diagram.png"/>
+</td></tr></table>
 
 ##### How do I know when I'm done?
 
