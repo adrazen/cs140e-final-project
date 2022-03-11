@@ -2,6 +2,7 @@
 
 #### Introduction: What is GPIO? 
 GPIO: [General Purpose Input Output](https://en.wikipedia.org/wiki/General-purpose_input/output). 
+
 GPIO is a descriptor for a pin that has no inherent dedicated purpose. 
 Instead, it can be programmatically toggled between input/output mode,
 and high/low signals  in order to control some electronic device. 
