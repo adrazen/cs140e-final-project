@@ -12,11 +12,12 @@ You likely have a short somewhere and in the worst-case can fry your laptop.
 ### Reading before lab:
 
   1. Read through the [GPIO and device memory crash course](../../guides/GPIO.md) 
-     in the guides directory. You should have the Broadcom document open so you can go through the examples in the crash course (`../../docs/BCM2835-ARM-Peripherals.annot.pdf`).
+     in the guides directory. You should have the Broadcom document open so you 
+      can go through the examples in the crash course (`../../docs/BCM2835-ARM-Peripherals.annot.pdf`).
 
   2. After doing so, read through pages 4--7 and 91---96 of the broadcom
-     document (`../../docs/BCM2835-ARM-Peripherals.annot.pdf`) to see what
-     memory addresses to read and write to get the GPIO pins to do stuff.
+     document to see what memory addresses to read and write to get the
+     GPIO pins to do stuff.
 
      Note 1: this is a low-level hardware document.  You will almost
      certainly be missing key bits of context and so it will seem
@@ -24,7 +25,7 @@ You likely have a short somewhere and in the worst-case can fry your laptop.
      and try to pull out what you can.  We will cover the necessary
      pieces in class.
 
-     As discussed in `Part 0` of the lab, your specific goal is to figure
+     Your specific goal for this lab is to figure
      out how to configure GPIO pin 20 (the second from the bottom right
      pin sticking up from the r/pi when orientated with pins on the right)
      to be either an output pin (e.g., that can blink an led) or an
