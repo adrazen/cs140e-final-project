@@ -3,21 +3,28 @@
 **Important: as always, read and complete the [PRELAB](PRELAB.md)
 before lab!**
 
+### Introduction
+
 The first lab was just setup.  Now we get to the fun part: you'll use
 the Broadcom document (`../../docs/BCM2835-ARM-Peripherals.annot.PDF`)
 to figure out how to write the code to turn the GPIO pins on/off yourself
 as well as reading them to get values produced by a digital device.
 You'll use this code to blink an LED and to detect when a capacitive
-touch sensor is touched.
+touch sensor is touched. This lab is important as it's our first real 
+introduction to using a hardware document in tandem with writing code
+to control the pi. It's also our first use case for reading/writing to 
+device memory. `GET32` and `PUT32` are your friends, and will be this whole quarter!
 
-Make sure you read the [GPIO and device memory crash
-course](../../guides/GPIO.md) in the guides directory.
+It's in the PRELAB, but please be sure you have read [GPIO and device memory crash
+course](../../guides/GPIO.md) in the guides directory, and understand the examples.
+This document does a good job of jumpstarting the work you'll do today. In short, by the 
+end of this lab, you'll have written code to toggle a given GPIO pin
+on your pi between input/output, and on(high)/off(low).
 
 ##### Sign off
 
 If you've never used a pi before, to get credit for the lab
 show the following:
-
 
    1. That `code/2-blink.c` correctly blinks two LEDs on pin 20 and 21 in
       opposite orders (i.e., if 20 is on, 21 should be off and vice
