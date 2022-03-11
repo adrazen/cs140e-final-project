@@ -2,7 +2,9 @@
 
 #### Introduction
 
-When a program accesses memory, it does not know or care where the physical 
+A key part of a functioning operating system is a virtual memory system 
+that abstracts memory access logic away from the user program. When a 
+program accesses memory, it does not know or care where the physical 
 memory backing the address is stored. Instead, it relies on the operating 
 system and the hardware to work together to locate the right physical address 
 and thus provide access to the data it wants. This mapping from physical 
