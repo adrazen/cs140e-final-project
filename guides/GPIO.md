@@ -1,6 +1,6 @@
 ### A sort-of ELI5 crash course on device memory: GPIO
 
-GPIO: [General Purpose Input Output](https://en.wikipedia.org/wiki/General-purpose_input/output)
+GPIO: [General Purpose Input Output](https://en.wikipedia.org/wiki/General-purpose_input/output) aka the set of pins on your pi.
 
 (Note: all page numbers refer to the Broadcom BCM2835 document in the 
 `docs` directory: `BCM2835-ARM-Peripherals.annot.pdf`)
