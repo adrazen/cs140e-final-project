@@ -316,7 +316,7 @@ your computer and to r/pi binaries.
 
 Install the toolchain:
    -  For a mac use the [cs107e install notes](http://cs107e.github.io/guides/install/mac/).  Note: do not 
-      install the python stuff.
+      install the python stuff. We will use their custom brew formula!
 
    -  For [ubuntu/linux](https://askubuntu.com/questions/1243252/how-to-install-arm-none-eabi-gdb-on-ubuntu-20-04-lts-focal-fossa), ARM recently
       changed their method for distributing the tool change.   Now you
