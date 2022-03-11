@@ -1,7 +1,7 @@
 ### A sort-of ELI5 crash course on device memory: GPIO
 
 (Note: all page numbers refer to the Broadcom BCM2835 document in the 
-`docs` directory.)
+`docs` directory: `BCM2835-ARM-Peripherals.annot.pdf`)
 
 The r/pi, like most processors has a bunch of different devices it can
 control.  For example: the GPIO pins you use in lab 0 and lab 1. You
