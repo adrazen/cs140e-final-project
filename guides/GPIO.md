@@ -1,6 +1,16 @@
 ### A sort-of ELI5 crash course on device memory: GPIO
 
-GPIO: [General Purpose Input Output](https://en.wikipedia.org/wiki/General-purpose_input/output) aka the set of pins on your pi.
+GPIO: [General Purpose Input Output](https://en.wikipedia.org/wiki/General-purpose_input/output). 
+
+#### Introduction
+What is GPIO? 
+GPIO is a descriptor for a pin that has no inherent dedicated purpose. 
+Instead, it can be programmatically toggled between input/output mode,
+and high/low signals  in order to control some electronic device. 
+26 out of the 40 RPi pins are GPIO pins, while the others have
+assigned purpose (e.g. 5v, ground pins, etc...). We can use the pi
+to control these GPIO pins as needed.
+
 
 (Note: all page numbers refer to the Broadcom BCM2835 document in the 
 `docs` directory: `BCM2835-ARM-Peripherals.annot.pdf`)
