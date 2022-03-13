@@ -30,6 +30,12 @@ our system will only use a First-Level Descriptor). Each page table entry
 will map to a single section (whose information is stored in the First 
 Level Descriptor) or will be marked as invalid. For this lab, there is a 
 `fld_t` struct to store all of the information for a First-Level Descriptor.
+At the end, your code should align with the following diagram of how the 
+Page Table and Page Table Entries look in the ARMv6 vitual memory system:
+
+<table><tr><td>
+  <img src="images/page-table-entry-diagram-no-values.png"/>
+</td></tr></table>
 
 For the second function (controlling memory access permissions), the MMU 
 is responsible for "error checking" memory access in order to prevent 
@@ -257,13 +263,6 @@ Useful pages:
   - B4-28: bit[18] (the IMP bit) `IMP = 0` for 1MB sections.
   - B4-10: Domain permissions.
   - B4-29: translation of a 1MB section.
-
-At the end, your code should align with the following diagram of how the 
-Page Table and Page Table Entries look in the ARMv6 vitual memory system:
-
-<table><tr><td>
-  <img src="images/page-table-diagram.png"/>
-</td></tr></table>
 
 ##### How do I know when I'm done?
 
