@@ -1,5 +1,7 @@
-### Lab: automatically cross-check your GPIO code against everyone else's.
+## Lab: automatically cross-check your GPIO code against everyone else's.
 
+
+### Introduction
 A goal of this course is that you will write every single line of
 (interesting) low level code you use.  A good result of this approach
 is that you will understand everything and, unlike most embedded or
@@ -20,6 +22,28 @@ tracing all reads and writes it does and comparing them to everyone
 else's implementation.  If even one person gets it right, then showing
 equivalence means you got it right too.  And, nicely, automatically
 detect if any subsequent modifications you do break the code.
+
+This lab is going to be the first time we leverage `cksum` (checksums) 
+as a cross-checking test mechanism for code correctness. `cksum` will
+continue to pop up in future lab iterations so gaining an understanding
+_now_ for why this method of verification is useful to us, will help 
+you later on as well! In short, `cksum` generates a 
+[CRC](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) hash for
+a given file. We'll save our test outputs to `*.out` files and then
+run `cksum` on those, to ensure that our read and write calls match up.
+
+This lab will also ask you to generalize your `gpio.c` code from last
+week. In particular - recall the purpose of the GPIO Function Select
+Registers (FSELn, p91-92 of Broadcom doc). We used that register in
+the gpio lab to set a pin to input or output functionality, however 
+pins can also be set to various alternate functions. Today, 
+you will write code that decomposes that logic into the more general 
+`gpio_set_function()` and verify that the function you've written is
+correct through cross-checking. 
+
+After checking off today, you can feel confident that your code is
+_at least as correct_ as everyone else's in this class!
+
 
 #### Sign-off
 
