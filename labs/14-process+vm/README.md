@@ -1,28 +1,25 @@
 ## User-process: Using a process structure and virtual memory
 
-I had hoped we would do a more full-featured OS process lab, but given:
+#### Introduction
 
-  1. People are still working on the past VM labs;
-  2. We should start thinking seriously about projects;
-  3. Ukraine.
+Though virtual memory can be thought of as a standalone system, there 
+needs to be an effective way to incorporate the logic of virtual memory 
+into the OS so that the VM system works seamlessly. In this lab, we verify
+that the VM code we wrote in the previous two labs works for context 
+switching using a real process structure. A **context switch** occurs when
+we switch from one process to another. In order to context switch 
+successfully, we need to make sure that that we store all of the state of 
+the current process so that it can be restored and resume execution at a 
+later point. Thus, the key to a successful context switch is making sure
+we store and save all relevant state variables. To do this, we will make 
+use of a procces structure to store all of the relevant information for a 
+given process in a `struct`. 
 
-Today's lab is a bit smaller and targeted: 
-  1. We'll build and check the
-     pieces needed to context switch using a real process structure (what
-     you need for pre-emptive threading/user-processes) and add virtual
-     memory.  The entire thing will be checked using single stepping.
-
-  2. You should reach a tentative agreement for what your final project is,
-     and spec out the hardware you need.  Show us this as part of checkoff.
-
-We will still need to add some steps to get to a simple UNIX style
-system, but these are (1) needed pieces also (2) don't really need you
-to understand much additional starter code, so it's a nice breather
-(hopefully).
-
-For the first couple of parts, we'll start by adding to a copy of your
-lab 11 (the user process lab) to keep new stuff to a minimum.  Then we'll
-flip that code into a more full fledged code base.
+Once we have stored all infromation successfully, we will need to implement 
+a routine that actually takes care of the context switch itself. This routine
+will have a pointer to the struct representing the next process that needs 
+to run, and then will process to load up all of the relevent information for 
+this new process so that it can run. 
 
 
 ***Checkoff***:
@@ -59,35 +56,36 @@ Great. We now have a defined stable state to work from.
 The lab is going to be a set of small pieces.  As a first
 step we just update what gets included:
 
-   1. Add the line:
+  1. Add the line:
 
-            #include "pix-internal.h" 
+    #include "pix-internal.h"  
 
-     the the end of `trivial-os.h`.
+  the the end of `trivial-os.h`.
+     
+     
+  The header `pix-internal.h` has the following trivial process
+  structure:
 
-     The header `pix-internal.h` has the following trivial process
-     structure:
+      // add this to your trivial-os.h
+      typedef struct {
+          // register save area: keep it at offset 0 for easy
+          // assembly calculations.
+          uint32_t reg_save[16 + 1];  // 16 general purpose registers 
+                                      // + spsr
 
-            // add this to your trivial-os.h
-            typedef struct {
-                // register save area: keep it at offset 0 for easy
-                // assembly calculations.
-                uint32_t reg_save[16 + 1];  // 16 general purpose registers 
-                                            // + spsr
+          ... more stuff ...
 
-                ... more stuff ...
-        
-                // used by the equiv code.
-                pix_equiv_t ctx;
-            } pix_env_t;
-
-   2. If you look in the new file `pix-env.c` you'll see the trivial 
+          // used by the equiv code.
+          pix_equiv_t ctx;
+      } pix_env_t;
+  
+  2. If you look in the new file `pix-env.c` you'll see the trivial 
       definition of `pix_cur_process`:
     
             static pix_env_t init_process;
             pix_env_t *pix_cur_process = &init_process;
 
-   3.  Compile and run the checks to make sure you get the same checksums.
+  3.  Compile and run the checks to make sure you get the same checksums.
 
 --------------------------------------------------------------------
 ### Part 1: save state to a process structure
