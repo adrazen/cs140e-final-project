@@ -1,4 +1,4 @@
-## simple user processes and equivalance checking.
+## Simple User Processes and Equivalance Checking
 
 Today you're going to do a wildly useful trick for ruthlessly detecting
 subtle operating system mistakes.  It will prove invaluable next week
