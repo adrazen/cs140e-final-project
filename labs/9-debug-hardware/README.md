@@ -1,6 +1,6 @@
 ## Using debug hardware to catch mistakes
 
-#### Introduction
+### Introduction
 
 Any systems programmer knows the importance of debugging tools such as
 GDB and LLDB. These tools are especially useful for debugging memory
@@ -71,7 +71,7 @@ Reminder:
   - There is a [cheat sheet](./DEBUG-cheat-sheet.md) that summarizes a
     lot of the page numbers and rules .
 
-### Checkoff
+#### Checkoff
    
    - The tests for 1 and 2 pass.
    - You code isn't ugly and has comments where you got the instructions from.
