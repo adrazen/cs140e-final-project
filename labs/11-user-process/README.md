@@ -29,11 +29,11 @@ in a problem of security. When running processes and user programs,
 the OS needs to maintain confidence that the currently running process
 will not take potentially harmful actions (e.g. overwriting permissions
 /memory/other processes). This need is met by designating processor 
-**modes**. The operating system (or kernel) itself runs in **kernel mode**, 
+**_modes_**. The operating system (or kernel) itself runs in **_kernel mode_**, 
 with unrestricted access to privileged operations, such as writing/full 
 memory access. A process that is less trusted, or that we simply don't want
 to be able to overwrite other processes would instead be run in
-**user mode**. In user mode, access to privileged operations is restricted.
+**_user mode_**. In user mode, access to privileged operations is restricted.
 Typically, if a user process needs to perform a privileged operation (such
 as reading from disk, writing, etc...), it will need to use a **syscall** 
 (system call). Syscalls allow for the controlled exposure of restricted
@@ -43,10 +43,12 @@ back to user-level and continuing on.
 
 <img width="200" alt="image" src="https://user-images.githubusercontent.com/40475205/158266585-2ce35bf9-eccd-46bd-a091-b67c245a1e24.png">
 
-In today's lab, you'll write some assembly to jump to user mode and execute user code.
+In today's lab, you'll write some assembly to switch to user mode and execute user code.
 You'll also implement key parts of a low level equivalence check that will combine single-stepping 
 with hashing to check that the user register values you're seeing match up with the rest
-of the class. This lab builds on the prior interrupts and debugging labs and will 
+of the class. Finally, you'll write code to enable breakpoints (crucial for single-stepping)
+and replace our staff version with
+your own. This lab builds on the prior interrupts and debugging labs and will 
 prepare us to dive into virtual memory.
 
 
