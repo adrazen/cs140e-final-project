@@ -15,7 +15,7 @@ of using _assembly_ as opposed to _C-code_ in certain contexts.
 ##### 1. The Benefits of Assembly
 
 For most of us, our last tangible experience with assembly was in CS107 when 
-doing Binary Bomb. The resulting relationship with assembly is either one of
+doing Binary Bomb/SecureVault. The resulting relationship with assembly is either one of
 love or one of hate. In this lab, we learn the importance of using assembly, 
 and why sometimes we have no other option _but_ to use assembly. There is some
 functionality that it is simply not possible to express in C. In the case of
