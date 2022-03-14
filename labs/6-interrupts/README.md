@@ -16,7 +16,7 @@ kernel to make important scheduling decisions about which process should
 run next. Most importantly, the scheduler needs to decide which process 
 should have priority to run. The scheduler by might begin by running one
 process--called, say, Process B--but will give priority to another 
-process--called, say, Process A--if the second process needs immedaite 
+process--called, say, Process A--if the second process needs immediate 
 attention. In other words, the scheduler can choose to _interrupt_ 
 Process A by forcing that process to stop running for the time being. 
 The scheduler would do this by moving Process A from the running set to 
