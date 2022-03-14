@@ -31,7 +31,7 @@ describe what to do.
 
 The lab has five parts; 
   1. You control which of the five parts is being run by modifying
-     the `part` variable in `trivial-kernel/trivial-os.c` and set it to `0`,
+     the `part` variable in `trivial-os/trivial-os.c` and set it to `0`,
      `1`, etc.  You can also use the given enumeration type.
 
   2. You should do all `make` invocations in `trivial-user-level` since
