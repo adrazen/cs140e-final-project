@@ -79,7 +79,7 @@ more-or-less the same, except they are synchronous events triggered by the
 currently running thread (often by the previous or current instruction,
 such as a access fault, divide by zero, illegal instruction, etc.)
 The framework we use will handle these as well; and, in fact, on the
-arm at a mechanical level there is little difference.
+ARM at a mechanical level there is little difference.
 
 Like everything good, interrupts come at a cost: this will be our
 first exposure to race conditions.  If both your regular code and the
