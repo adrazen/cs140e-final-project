@@ -330,7 +330,7 @@ For sending a HTTP response back to the client, you will want to use the HTTP
 protocol. Here is an outline of what a HTTP response looks like: 
 
 <table><tr><td>
-  <img src="images/http-response-format-diagram.png" width="700"/>
+  <img src="images/http-response-format-diagram.png" width="600"/>
 </td></tr></table>
 
 For convenience, you can use the following valid HTTP response
