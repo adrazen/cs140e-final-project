@@ -1,5 +1,45 @@
 ## Using debug hardware to catch mistakes
 
+#### Introduction
+
+Any systems programmer knows the importance of debugging tools such as
+GDB and LLDB. These tools are especially useful for debugging memory
+corruption errors. In order for these debugging tools to work, they use
+exceptions to halt execution whenever a certain line of code is about
+to execute, thereby allowing the programmer to inspect that line of 
+code and understand what is going on. 
+
+The idea of an **exception** is similar to an interrupt. (In fact, both 
+exception and interrupts are unexpected events that disrupt the normal
+flow of execution. The main difference between the two is that an 
+exception originates from within the processor while an interrupt 
+originates from outside the process). As with an interrupt, whenever
+an exception occurs, execution is halted so that the exception can
+be handled. The OS will look at its interrupt table (which we have
+defined in `interrupts-asm.S` in `libpi/src`) in order to branch to
+the right routine based on the type of exception that was recieved. 
+
+The ARM chip we use, like many machines, has a way to trigger two
+different types of exceptions, both of which are useful for debugging.
+The ARM chip is able to set both breakpoints and watchpoints. 
+**Breakpoints** cause a fault when the program counter is set to a 
+specific address. In other words, breakpoints allow you to halt 
+program execution based on a certain instruction being executed. 
+Meanwhile, **watchpoints** cause a fault when a load or store is performed 
+for a specific address. In other words, watchpoints allow you halt 
+execution flow based on a particular dat access. Watchpoints can be used 
+to monitor "write", "read", or "read/write" accesses. For instance, 
+watchpoints might be used to track when a variable gets updated, a 
+region of the stack is written to, or a particular buffer is read 
+from. Together, these two types of faults are used by debuggers to 
+run a debugged program at full-speed until a specific location is 
+read, written or executed.
+
+
+
+
+
+
 Today is a "fetch-quest" style lab that has you setup simple breakpoint
 and watchpoints.  It should mostly be defining inline assembly routines
 and calling them.  Should be  fairly mechanical, straightforward but
