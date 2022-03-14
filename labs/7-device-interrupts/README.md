@@ -1,10 +1,28 @@
 ## Lab 8: device interrupts 
 
-A couple of common things you want in real OS life:
+### Introduction
+
+In today's lab, we will build off of the previous lab where we implemented
+"general" interrupts. In today's lab, we will focus specifically on device 
+interrupts.
+
+When implementing a real operating system, you'll want to be able to: 
   1. Get interrupts from GPIO pins.
   2. Buffer input and output.
 
 We'll build both today.
+
+For interrupts from GPIO pins, our task is simple: we will want to detect
+when the input transitions from 0 to 1 or from 1 to 0. This transition 
+from 0 to 1 is known as a "rising" edge, while the transition from 1 to 0
+is known as a "falling" edge. In order to ensure that we implement our
+GPIO interrupts correctly, we will use a simple version of a logic 
+analyzer in order to verify that we implemented everything correctly. To 
+do this, we will want to record all of the signals coming from our device
+for a given period of time and store them in the queue. Once we do that, 
+we can compare them with what we expect to have seen to make sure our
+interrupts line up correctly. 
+
 
 Check-off:
   1. Your `gpio` code passes the cksum tests and the loop back tests.
