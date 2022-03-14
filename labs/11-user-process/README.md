@@ -41,7 +41,7 @@ operations. If a user mode process were to use a syscall, that syscall
 instruction would execute in kernel mode, before switching the process mode
 back to user-level and continuing on.
 
-<img width="200" alt="image" src="https://user-images.githubusercontent.com/40475205/158266585-2ce35bf9-eccd-46bd-a091-b67c245a1e24.png">
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/40475205/158266585-2ce35bf9-eccd-46bd-a091-b67c245a1e24.png">
 
 In today's lab, you'll write some assembly to switch to user mode and execute user code.
 You'll also implement key parts of a low level equivalence check that will combine single-stepping 
