@@ -294,8 +294,54 @@ works with `libpi`.
 ------------------------------------------------------------------------------
 ### Part 3: run a web server through your esp.
 
-TO DO
+To run a web server through your ESP, we will want to use the HTTP protocol to 
+communicate with a browser. The general cycle of an (extremely simplified) HTTP 
+request is the following:
 
+1. Browser opens a TCP connection to the server. In this case, the server is 
+   our program running `server.c`.
+3. Browser sends request specifying what it want. 
+4. Server responds based on the browser's request. Normally, this response will
+   be fetching the browser's requested resource. When the server responds, it
+   must use the HTTP protocol. 
+5. Finally, server closes the connection. (Smarter web servers would keep the 
+   connection alive to see if the browser has any other requests, thereby 
+   avoiding the overhead of opening a TCP connection.)
+
+
+In terms of the code you have to write, you will want to make a copy of your
+code from `1-ping-pong` so that you can modify `server.c`. The key changes
+you will want to make is that after waiting for a connection to come in, you 
+will want to: 
+
+1. Wait for a cient to send a request. 
+2. Send back a HTTP response. 
+3. Close the connection. This prevents the browsers from being clever (they'll 
+   try to keep the connection alive to make future requests faster, which messes 
+   up our loop. So we just close the connection after each response.) You can 
+   close the connection by sending the following command to the AT: 
+   `AT+CIPCLOSE=<ID>`, where <ID> is the connection/channel ID.
+
+Once you get this running, you should be able to connect to your AT's WiFi network 
+from your computer and visit http://192.168.4.1:4444. You should see a message from 
+your web server.
+	
+For sending a HTTP response back to the client, you will want to use the HTTP
+protocol. Here is an outline of what a HTTP response looks like: 
+
+<table><tr><td>
+  <img src="images/http-response-diagram.png" width="700"/>
+</td></tr></table>
+
+For convenience, you can use the following valid HTTP response
+	
+```
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 22
+
+<h1>Hello, world!</h1>
+```
 
 ------------------------------------------------------------------------------
 ### Part 4: do some kind of extension.
