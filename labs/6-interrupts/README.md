@@ -23,7 +23,7 @@ The scheduler would do this by moving Process A from the running set to
 the ready queue. Here is a diagram to model this:
 
 <table><tr><td>
-  <img src="images/process-lifecycle-diagram.png"/>
+  <img src="images/process-lifecycle-diagram.png" width="400"/>
 </td></tr></table>
 
 The key idea with interrupts is that we can manage the execution of 
@@ -93,7 +93,11 @@ executing, before we switch to the code in the interrupt handler. This
 and all of its relevant variables to another piece of code and all of 
 its relevant variables. For this lab, we will be context switching 
 between the context of the regular C code and the context of the 
-exception handler. 
+interrupt handler. Here is a diagram illustrating this:
+
+<table><tr><td>
+  <img src="images/interrupts-diagram.png" width="400"/>
+</td></tr></table>
 
 -----------------------------------------------------------------------------
 
