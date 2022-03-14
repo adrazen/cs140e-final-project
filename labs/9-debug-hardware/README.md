@@ -35,39 +35,15 @@ from. Together, these two types of faults are used by debuggers to
 run a debugged program at full-speed until a specific location is 
 read, written or executed.
 
-
-
-
-
-
-Today is a "fetch-quest" style lab that has you setup simple breakpoint
-and watchpoints.  It should mostly be defining inline assembly routines
-and calling them.  Should be  fairly mechanical, straightforward but
-useful lab.
-
-Reminder:
-  - Do the readings in the [./PRELAB.md](./PRELAB.md) first!    
-  - The hardware documents you need are in `./docs`:
-    `arm1176-ch13-debug.pdf` is the debug hardware chapter for our
-    arm1176 chip and the (shorter) excerpt `arm1176-fault-regs.pdf`
-    gives the fault registers.
-  - There is a [cheat sheet](./DEBUG-cheat-sheet.md) that summarizes a
-    lot of the page numbers and rules .
-
-The ARM chip we use, like many machines, has a way to set both
-*breakpoints*, which cause a fault when the progam counter is set to
-a specified address, and *watchpoints* which cause a fault when a load
-or store is performed for a specified address.  These are usually used
-by debuggers to run a debugged program at full-speed until a specific
-location is read, written or executed.
-
-This lab will use watchpoints as a way to detect memory corruption
-efficiently.  As you know too-well by now, challenge of bare-metal
-programming is that we have not had protection against memory corruption.
-By this point in the quarter, I believe everyone in the class has had
-to waste a bunch of time figuring out what was causing memory corruption
-of some location in their program.  After today's lab you should be able
-to detect such corruption quickly:
+In today's lab, we will focus on setting watchpoints and breakpoints. 
+Most of you are probably most familiar with breakpoints. We will use 
+watchpoints as a way to detect memory corruption efficiently.  As you 
+know too-well by now, challenge of bare-metal programming is that we 
+have not had protection against memory corruption. By this point in the 
+quarter, I believe everyone in the class has had to waste a bunch of 
+time figuring out what was causing memory corruption of some location 
+in their program. After today's lab you should be able to detect such 
+corruption quickly:
 
    1. Simply set a watchpoint on the address of the memory getting corrupted,
    2. When a load or store to this address occurs, you'll immediately
@@ -82,7 +58,18 @@ whereas the watchpoints can track a single word (or even byte).
 
 The lab today should be around 100-200 lines of code, doesn't need
 virtual memory, and if you continue to do OS or embedded stuff, will be
-very useful in the future.
+very useful in the future. This "fetch-quest" style lab. It should mostly 
+be defining inline assembly routines and calling them.  Should be fairly 
+mechanical, straightforward but useful lab.
+
+Reminder:
+  - Do the readings in the [./PRELAB.md](./PRELAB.md) first!    
+  - The hardware documents you need are in `./docs`:
+    `arm1176-ch13-debug.pdf` is the debug hardware chapter for our
+    arm1176 chip and the (shorter) excerpt `arm1176-fault-regs.pdf`
+    gives the fault registers.
+  - There is a [cheat sheet](./DEBUG-cheat-sheet.md) that summarizes a
+    lot of the page numbers and rules .
 
 ### Checkoff
    
