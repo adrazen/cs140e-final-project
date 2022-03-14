@@ -1,6 +1,9 @@
 ## Simple User Processes and Equivalence Checking
 
-Today you're going to do a wildly useful trick for ruthlessly detecting
+### Introduction
+
+Today you're going to do a wildly useful trick - equivalence checking
+with single stepping - for ruthlessly detecting
 subtle operating system mistakes.  It will prove invaluable next week
 when we do virtual memory --- a topic that has extremely hard-to-track-down
 bugs if you just use "normal" testing of running programs and checking 
@@ -20,7 +23,31 @@ This will start getting you used to user-level vs kernel stuff.  Also,
 we need code at user level so (1) single-stepping works and (2) the
 addresses are the same for everyone.
 
+#### User-level vs kernel mode
+The distinction between user and kernel process privileges is rooted
+in a problem of security. When running processes and user programs,
+the OS needs to maintain confidence that the currently running process
+will not take potentially harmful actions (e.g. overwriting permissions
+/memory/other processes). This need is met by designating processor 
+**modes**. The operating system (or kernel) itself runs in **kernel mode**, 
+with unrestricted access to privileged operations, such as writing/full 
+memory access. A process that is less trusted, or that we simply don't want
+to be able to overwrite other processes would instead be run in
+**user mode**. In user mode, access to privileged operations is restricted.
+Typically, if a user process needs to perform a privileged operation (such
+as reading from disk, writing, etc...), it will need to use a **syscall** 
+(system call). Syscalls allow for the controlled exposure of restricted
+operations. If a user mode process were to use a syscall, that syscall
+instruction would execute in kernel mode, before switching the process mode
+back to user-level and continuing on.
 
+<img width="200" alt="image" src="https://user-images.githubusercontent.com/40475205/158266585-2ce35bf9-eccd-46bd-a091-b67c245a1e24.png">
+
+In today's lab, you'll write some assembly to jump to user mode and execute user code.
+You'll also implement key parts of a low level equivalence check that will combine single-stepping 
+with hashing to check that the user register values you're seeing match up with the rest
+of the class. This lab builds on the prior interrupts and debugging labs and will 
+prepare us to dive into virtual memory.
 
 
 --------------------------------------------------------------------
@@ -47,6 +74,8 @@ What to do for each part:
      user program (using `program_get`) and jumps to it directly, running
      it in kernel mode.  The user program does system calls to call back
      into the `trivial-os`.  This gives you a simple starting point.
+     An diagram from the prelab readings refers to this method of "loading"
+     as "Direct Execution Protocol Without Limits".
 
      *What to do*: follow the flow of control and make sure understand what
      is going on.  This is useful to help you get orientated with what
@@ -422,7 +451,8 @@ our output: `trivial-user-level`):
 Part 5: replace our `breakpoint.h` implementation
 
 The code currently calls our single-step implementation (in
-`single-step.o`).  For this part, you should modify your debug hardware
+`single-step.o`) which relies on our `staff-breakpoint.o`.  
+For this part, you should modify your debug hardware
 code to support mismatching and implement the following routines:
 
 ***NOTE: these routines call `cp14_enable` if it hasn't been called
