@@ -2,7 +2,7 @@
 
 ***NOTE: Make sure you start with the [PRELAB](PRELAB.md)!***
 
-###
+### Introduction
 
 The next few labs will remove to remove all magic from your pi setup
 by going downward and having you write and replace all of our code.
@@ -15,7 +15,7 @@ Today's lab is a big step in that direction.  You will:
   - Write your own bootloader (both the Unix and pi side) to replace
      what we used last lab (i.e., `pi-install` and `bootloader.bin`).
      
-#### What is our "bootloader"?
+#### What is your "bootloader"?
 Recall from the previous lab, that you were given a bootloader binary,
 and copied it to your SD card as `kernel.img` (the pi's default kernel location).
 This "pi side" of the bootloader is then able to spin in a loop while
