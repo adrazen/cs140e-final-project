@@ -19,6 +19,8 @@ Common frame structure:
 - Data bits packet: Always follows start bit. Typically 8-bit data packet, but can range.
 - STOP bit: Always follows data packet, high. Indicates end of frame.
 
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/40475205/158321484-ba60d857-0bab-49c3-9fa4-4e607551e6d5.png">
+
 The pi uses a mini-UART which is mapped to two gpio pins for tx/rx (transmit/receive).
 Today you'll write code to initialize this UART in the correct configuration (frame size, 
 [baud rate](https://en.wikipedia.org/wiki/Baud)), as well
