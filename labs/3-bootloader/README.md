@@ -4,7 +4,7 @@
 
 ### Introduction
 
-The next few labs will remove to remove all magic from your pi setup
+The next few labs are constructed to remove all magic from your pi setup
 by going downward and having you write and replace all of our code.
 The only code running when you boot (and the only code you run to boot)
 will either be stuff you wrote, or simple library routines we give you
