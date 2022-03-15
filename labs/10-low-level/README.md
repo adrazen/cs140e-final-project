@@ -61,7 +61,9 @@ The program in the directory should pass.
 #### 4. Implement stack backtraces
 
 The CS107E website has a nice writeup on 
-[building backtraces](http://cs107e.github.io/assignments/assign4/)
+[building backtraces](http://cs107e.github.io/assignments/assign4/).
+This [memory diagram](http://cs107e.github.io/labs/lab4/images/stack_abs.html),
+in particular, will be of use to you!
 
 Implement this and show it works!  (We'll push some code in a bit).
 
