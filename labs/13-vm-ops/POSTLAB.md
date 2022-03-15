@@ -17,5 +17,5 @@ in certain places.
 
 #### Key Points from the Lab
 
-##### 1. Importance of Error Checking
+##### 1. When to flsush and reset state? 
 
