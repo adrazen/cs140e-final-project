@@ -64,7 +64,7 @@ do this in `mmu-except.c` where we define a `data_abort_vector` function that wi
 with a data abort fault appropriately. In our case, we do a combination of trying to 
 remedy the error in case the error is "fixable" as well as simply alerting of an error 
 in the case the error is "unfixable". Here is one possible implementation of the 
-`data_abort_vector` function in `mmu-excpet.c`:
+`data_abort_vector` function in `mmu-except.c`:
 
     void data_abort_vector(unsigned lr) {
       // use Data Fault Status Register to get cause of the fault
