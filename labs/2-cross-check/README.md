@@ -30,7 +30,8 @@ _now_ for why this method of verification is useful to us, will help
 you later on as well! In short, `cksum` generates a 
 [CRC](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) hash for
 a given file. We'll save our test outputs to `*.out` files and then
-run `cksum` on those, to ensure that our read and write calls match up.
+run `cksum` on those, to ensure that everyone's read and write calls 
+match up (i.e. everyone's `cksum` values are identical).
 
 This lab will also ask you to generalize your `gpio.c` code from last
 week. In particular - recall the purpose of the GPIO Function Select
