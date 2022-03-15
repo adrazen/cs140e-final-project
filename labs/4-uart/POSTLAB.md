@@ -23,5 +23,18 @@ like I was really getting my feet under me. Also, the challenge of writing a dev
 
 
 ##### 3. Common errors and misconceptions
-- "hellhellhellhell..." output: While `1-uart/hello`
+- Outputting `"hellhellhellhell..."`: While attempting to successfully run `1-uart/hello`, 
+a good number of folks ran into this behavior. As this is a looping behavior related to I/O, 
+an immediate alarm bell that you'd want to go off is "Am I flushing data correctly?". In this case,
+at times people were either not flushing in their `uart_disable()` (necessary! we want to pause 
+until all the data in the queue has been sent on the wire + dealt with/thrown away), 
+or some piece of their flush functionality (e.g. `uart_tx_is_empty()`) was ineffective.
 
+- Register addresses: When working with datasheets as verbose as the Broadcom, it can be
+difficult at times to avoid tiny errors when transferring information between the document
+and your code. However, when an error ends up in an important variable (e.g. a register address),
+it can sometimes lead to hard-to-debug behaviors. A good method for both this lab and those following
+is to continually check important "magic" numbers with your peers and triple check against the docs!
+Sometimes changing a single digit can be the answer to your problems.
+
+- `PUT/GET8` vs `PUT/GET32`: 
