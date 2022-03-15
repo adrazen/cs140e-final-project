@@ -15,8 +15,17 @@ like I was really getting my feet under me. Also, the challenge of writing a dev
 
 #### Key Points from the Lab
 
-##### 1. Importance of device memory barriers (e.g. `dev_barrier()`)
-
+##### 1. Importance of device memory barriers (i.e. `dev_barrier()`)
+Your `uart_init` function is no small piece of code. At this point, we are working 
+with multiple devices in a single function, accessing various memory spaces. For 
+example, you set the alternate function on the GPIO tx/rx pins by writing to the GPFSELn
+register (1st peripheral device: GPIO), then on the Pi (2nd device) itself, you accessed the `AUXENB`
+register to enable another peripheral, the mini-UART (3rd device). Between all of these various
+memory access steps, it's important to set up **memory barriers**, ensuring that instructions
+run to completion and avoiding _unpredictable_ behaviors. This is why you needed to use
+`dev_barrier()` between the various device access instructions. It's also a safe call to place
+a barrier at the beginning and end of your other `uart_` functions, since you can't guarantee
+where these functions are being called.
 
 ##### 2. The "read-modify-write" pattern (RMW)
 This phrase has probably been mentioned before/during this lab. At it's core, this is simply
