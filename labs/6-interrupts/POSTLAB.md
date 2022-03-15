@@ -23,8 +23,17 @@ interrupts, it's important to write them in assembly in order to be sure that
 we preserve all registers correctly. 
 
 In the case of interrupts, this is especially the case because we need to 
-work with special registers that are otherwise not available in C. In the 
-case of interrupts, we need to be able to access stack pointers and registers. 
+work with special registers that are otherwise not available in C, and we 
+need to guarantee that instructions execute in the order that we want them
+to. In the case of interrupts, we need to be able to access stack pointers 
+and registers.
+
+With standard C-code, we can't guarantee that the compiled version of the code
+is exactly what we expect it to be. This is because, at times, the compiler will
+try to optimize code and be more efficient. In most of the programs we have 
+written thus far, this isn't an issue. However, as we progress through the
+code, we will need to rely on assembly more in order to be able to write 
+functional low-level code. 
 
 ##### 2. Handling Different Types of Interrupts
 
