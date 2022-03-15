@@ -17,7 +17,7 @@ on building:
 2. **Mailboxes**: The Mailbox Peripheral is a peripheral that facilitates 
    communication between the CPU (Central Processing Unit) and the GPU 
    (Graphics Processing Unit). Mailboxes give the pi a way to send messages
-   to the GPU and to recieve a response. You can think of a Mailbox as the 
+   to the GPU and to receive a response. You can think of a Mailbox as the 
    main entry point into the GPU
 
 3. **Stack Backtraces**: A Stack Backtrace is a report of the actice stack 
