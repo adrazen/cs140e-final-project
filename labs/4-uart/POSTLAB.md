@@ -23,5 +23,5 @@ like I was really getting my feet under me. Also, the challenge of writing a dev
 
 
 ##### 3. Common errors and misconceptions
-    - "hellhellhellhell..." output: While `1-uart/hello`
+- "hellhellhellhell..." output: While `1-uart/hello`
 
