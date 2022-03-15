@@ -16,7 +16,7 @@ Today's lab is a big step in that direction.  You will:
      what we used last lab (i.e., `pi-install` and `bootloader.bin`).
      
 #### What is your "bootloader"?
-Recall from the previous lab, that you were given a bootloader binary,
+Recall from the previous lab, that you were given a bootloader binary (a pre-compiled program),
 and copied it to your SD card as `kernel.img` (the pi's default kernel location).
 This "pi side" of the bootloader was then able to spin in a loop while
 waiting for your laptop to use the command "pi-install" (aka the
