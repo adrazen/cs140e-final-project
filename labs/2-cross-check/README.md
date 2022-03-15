@@ -25,7 +25,7 @@ detect if any subsequent modifications you do break the code.
 
 This lab is going to be the first time we leverage `cksum` (checksums) 
 as a cross-checking test mechanism for code correctness. `cksum` will
-continue to pop up in future lab iterations so gaining an understanding
+continue to pop up in future lab verification so gaining an understanding
 _now_ for why this method of verification is useful to us, will help 
 you later on as well! In short, `cksum` generates a 
 [CRC](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) hash for
