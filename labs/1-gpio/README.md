@@ -8,9 +8,11 @@ before lab!**
 The first lab was just setup.  Now we get to the fun part: you'll use
 the Broadcom document (`../../docs/BCM2835-ARM-Peripherals.annot.PDF`)
 to figure out how to write the code to turn the GPIO pins on/off yourself
-as well as reading them to get values produced by a digital device.
+as well as reading from them to get values produced by a digital device.
 You'll use this code to blink an LED and to detect when a capacitive
-touch sensor is touched. This lab is important as it's our first real 
+touch sensor is touched. 
+
+This lab is important as it's our first real 
 introduction to using a hardware document in tandem with writing code
 to control the pi. It's also our first use case for reading/writing to 
 device memory. `GET32` and `PUT32` are your friends, and will be this whole quarter!
