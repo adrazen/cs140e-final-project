@@ -126,7 +126,7 @@ and slide forward to what you do get, and cut down the residue until
 you have what you need.
 
 -----------------------------------------------------------------------
-### Part 1. implement a UART device deriver:
+### Part 1. implement a UART device driver:
 
 Our general development style will be to write a new piece of
 functionality in a private lab directory where it won't mess with anything
