@@ -2,6 +2,8 @@
 
 ***NOTE: Make sure you start with the [PRELAB](PRELAB.md)!***
 
+###
+
 The next few labs will remove to remove all magic from your pi setup
 by going downward and having you write and replace all of our code.
 The only code running when you boot (and the only code you run to boot)
@@ -12,6 +14,26 @@ Today's lab is a big step in that direction.  You will:
 
   - Write your own bootloader (both the Unix and pi side) to replace
      what we used last lab (i.e., `pi-install` and `bootloader.bin`).
+     
+#### What is our "bootloader"?
+Recall from the previous lab, that you were given a bootloader binary,
+and copied it to your SD card as `kernel.img` (the pi's default kernel location).
+This "pi side" of the bootloader is then able to spin in a loop while
+waiting for your laptop (aka the "unix side" of this setup), to send 
+a program to the pi via the UART-TTL. When the spinning "pi side" 
+successfully receives the program, it stops spinning, copies the 
+received program into pi memory, and jumps to it to begin executing
+the program. In short, our "bootloader" is going to be the connection
+between unix programs you write on your laptop, and the pi device that
+we want those programs to run on!
+
+The following is a diagram to help you begin to visualize the method
+of communication between your unix side and pi side. There will be 
+more details further along in the lab!
+
+<img width="500" alt="Screen Shot 2022-03-14 at 10 34 33 PM" src="https://user-images.githubusercontent.com/40475205/158313673-2efd1d3f-2006-43d6-8db2-26f451e407c2.png">
+
+
 
 In the next lab you will write your own versions of the low-level device
 code your bootloader needs to control the UART hardware (what talks to
@@ -65,7 +87,7 @@ More detailed:
 #### The bootloader protocol.
 
 At a high level, the protocol works as follows: Here you'll write
-implement the code to:
+ the code to:
   1. pi: spin in a loop, periodically asking for the program to run;
   2. unix: send the program code;
   3. pi: receive the program code, copy it to where it should go, and
@@ -279,8 +301,8 @@ What you will do:
   1. You'll write missing code in `get-code.h:get_code` to get the 
      code and copy it where it should go.
 
-  2. After you compile, copy the resultant `kernel.img` to the SD card
-     just as you did in lab 0.
+  2. After you compile, copy the resultant `kernel.img` that is generated
+     to the SD card just as you did in lab 0.
 
   3. Use the tracing on the unix-side to debug what is going on.
      The traces should be identical to using our bootloader, other
