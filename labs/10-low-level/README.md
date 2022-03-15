@@ -1,27 +1,35 @@
-### Low-level hacks: Mailboxes, ATAGS, and backtraces.
+## Low-level hacks: Mailboxes, ATAGS, and backtraces.
 
-The last few labs have involved writing some pretty tricky code.  We take
-a bit of a pause and do some fairly simple but useful low level hacks
-that do not depend on the previous labs so that people can get everything
-sorted out.
+#### Introduction
 
-  - `ATAGS`: OSes use these as a way to pass various useful parameters.
-    We will use these to get the memory size.
+The last few labs have involved writing some pretty tricky code. Today's lab
+is more of an "odds and ends" types of lab that covers simple, but very 
+important, tricks in low level systems programming. In today's lab, we focus 
+on buiding: 
 
-  - mailboxes: the pi gives a way to get and set a variety of attributes by
-    sending messages to  different mailbox addresses.  
+1. **ATAGS**: ATAGS (which stands for ARM-Tags) are used to carry information from 
+   boot code to the kernel. ATAGS are a way to pass useful information such as 
+   memory size from one important place (boot code) to another important place 
+   (the kernel). For instance, when our hardware (i.e. our pi) boots up, it 
+   loads `kernel.img`. (Remember, `kernel.img` is like the "brain" of our pi). 
+   The internal bootloader passes parameters to `kernel.img` using ATAGS.
 
-    As a simple hack: You'll use this to get the memory size (along with
-    some other things) and compare it to the `ATAGS` value.
+2. **Mailboxes**: The Mailbox Peripheral is a peripheral that facilitates 
+   communication between the CPU (Central Processing Unit) and the GPU 
+   (Graphics Processing Unit). Mailboxes give the pi a way to send messages
+   to the GPU and to recieve a response. You can think of a Mailbox as the 
+   main entry point into the GPU
 
-  - Increasing your pi memory size: the pi ships with a bunch of memory.  By
-    default we can't access it.   You'll change that.
+3. **Stack Backtraces**: A Stack Backtrace is a report of the actice stack 
+   frames at a certain point during the execution of a program. Up until 
+   now, whenever you have gotten an assertion error or print a message, you
+   only have information about the file, function, and, line, that are 
+   directly corresponding to wherever the assertion is at. Without a stack 
+   backtrace it can be hard to figure out what is going on given you don't
+   have inofrmation about the caller(s). Today, you will write a simple
+   backtrace implementation that walks back up the stack and gets the current
+   callers. 
 
-  - Stack backtraces: so far, when you get an assertion error or print a message
-    we only have information about the file, function, and line the assertion
-    is at --- it can be hard to figure out what is going on without the 
-    caller(s).  You'll write a simple backtrace implementation that walks
-    back up the stack and gets the current callers.
 
 #### 1. ATAGS
 
@@ -57,7 +65,7 @@ The CS107E website has a nice writeup on
 
 Implement this and show it works!  (We'll push some code in a bit).
 
-There is a trivial program in `code-backtrace` to test (weakly) test it.
+There is a trivial program in `code-backtrace` to (weakly) test it.
 It manually prints the call stack --- when you print the backtrace it
 should match this (different formatting is ok).
 
