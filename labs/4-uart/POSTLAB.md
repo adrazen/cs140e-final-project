@@ -15,7 +15,7 @@ like I was really getting my feet under me. Also, the challenge of writing a dev
 
 #### Key Points from the Lab
 
-##### 1. Importance of memory barriers (e.g. `dev_barrier()`)
+##### 1. Importance of device memory barriers (e.g. `dev_barrier()`)
 
 
 ##### 2. The "read-modify-write" pattern (RMW)
