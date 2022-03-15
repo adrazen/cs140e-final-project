@@ -31,11 +31,11 @@ The following is a diagram to help you begin to visualize the method
 of communication between your unix side and pi side. There will be 
 more details further along in the lab!
 
-<img width="500" alt="Screen Shot 2022-03-14 at 10 34 33 PM" src="https://user-images.githubusercontent.com/40475205/158313673-2efd1d3f-2006-43d6-8db2-26f451e407c2.png">
+<img width="700" alt="Screen Shot 2022-03-14 at 10 34 33 PM" src="https://user-images.githubusercontent.com/40475205/158313673-2efd1d3f-2006-43d6-8db2-26f451e407c2.png">
 
 
-
-In the next lab you will write your own versions of the low-level device
+In the next lab you'll continue to eliminate opaque staff code.
+You will write your own versions of the low-level device
 code your bootloader needs to control the UART hardware (what talks to
 the TTY-USB device connecting your pi and laptop).  You will then be
 able to drop in your `gpio.o` and your `uart.o` and replace almost all
