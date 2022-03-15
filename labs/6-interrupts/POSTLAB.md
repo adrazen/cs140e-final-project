@@ -112,7 +112,7 @@ Here is a diagram outlining the relative priorities of the interrupts which we a
 included in our `_interrupts_table`:
 
 <table><tr><td>
-  <img src="images/interrupts-priority-chart.png" width="700"/>
+  <img src="images/interrupts-priorty-chart.png" width="700"/>
 </td></tr></table>
 
 
