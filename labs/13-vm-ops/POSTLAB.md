@@ -17,7 +17,7 @@ in certain places.
 
 #### Key Points from the Lab
 
-##### 1. Cleaning vs Invalidating the Cache
+##### 1. Importance of Flushing the Cache
 
 As you implemented the assembly routines for this lab, one of the key things
 you had to pay attention to was what happens to the cache. According to chapter
