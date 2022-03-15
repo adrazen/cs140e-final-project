@@ -5,7 +5,7 @@
 The last few labs have involved writing some pretty tricky code. Today's lab
 is more of an "odds and ends" types of lab that covers simple, but very 
 important, tricks in low level systems programming. In today's lab, we focus 
-on buiding: 
+on building: 
 
 1. **ATAGS**: ATAGS (which stands for ARM-Tags) are used to carry information from 
    boot code to the kernel. ATAGS are a way to pass useful information such as 
