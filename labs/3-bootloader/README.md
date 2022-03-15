@@ -19,7 +19,7 @@ Today's lab is a big step in that direction.  You will:
 Recall from the previous lab, that you were given a bootloader binary (a pre-compiled program),
 and copied it to your SD card as `kernel.img` (the pi's default kernel location).
 This "pi side" of the bootloader was then able to spin in a loop while
-waiting for your laptop to use the command "pi-install" (aka the
+waiting for your laptop to use the command `pi-install` (aka the
 "unix side" of this setup), to send 
 a program to the pi via the UART-TTL. At the end of this lab,
 you'll have replaced both sides of the bootloader setup with your
