@@ -33,7 +33,7 @@ between unix programs you write on your laptop, and the pi device that
 we want those programs to run on!
 
 The following is a diagram to help you begin to visualize the method
-of communication between your unix side and pi side. There will be 
+of communication between your bootloader's unix side and pi side. There will be 
 more details further along in the lab!
 
 <img width="700" alt="Screen Shot 2022-03-14 at 10 34 33 PM" src="https://user-images.githubusercontent.com/40475205/158313673-2efd1d3f-2006-43d6-8db2-26f451e407c2.png">
