@@ -83,3 +83,36 @@ that all cache maintenance operations are completed. As noted on B2-21 of the
 `ARM Architecture Manual`: "DSB causes the completion of all cache maintenance 
 operations appearing in program order prior to the DSB operation, and ensures
 that all data written back is visible to all (relevant) observers."
+
+##### 2. A Rundown on the Flushes
+
+Another aspect of this lab that you may have found confusing is the plethora
+of different types of "flushes" and memory synchronization operations. If you 
+were confused about what the differences between these operations are (as we 
+were), here's a concise of rundown of what each operation does, and why it's
+important: 
+
+- `PREFETCH_FLUSH`: The `PREFETCH_FLUSH` instruction ensures that all 
+   instructions that follow the `PREFETCH_FLUSH` are fetchec from cache 
+   or memory after the flush has been completed. 
+
+   This is important when you are: changing the ASID, completing
+   cache maintenance operations or branch predictor maintenance operations, or 
+   changing the CP15 registers. 
+
+- `FLUSH_BTB`: The `FLUSH_BTB` instruction flushes the Branch Target Buffers
+   (BTB) to ensure that we flush branch prediction logic. 
+   
+   This is important when you are: enabling or disabling the MMU, writing new
+   mappings to the page tables, or changing the TTBR0, TTBR1, or TTBCR. 
+
+- `DSB`: The `DSB` instruction is a Data Synchronization Barrier (DSB) that acts
+   as a special type of memory barrier. The `DSB` instruction is useful becuase
+   it forces a "waiting period" before given new set of instructions can execute. 
+   In a way, you can think of the `DSB` instruction as preventing race conditions. 
+   The `DSB` instruction ensures that no instructions that come after the `DSB` 
+   can execute until _all_ of the instructions before the `DSB` have finished 
+   exeucting. 
+   
+   This is important when you are: completing cache maintence operations, or 
+   completing branch predictor maintenance operations. 
