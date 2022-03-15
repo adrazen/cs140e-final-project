@@ -14,6 +14,10 @@ reached that magic point of understanding where: there is nothing else.
 UART - Universal Asynchronous Receiver/Transmitter - is a serial communication
 protocol (protocol for sending bits of data serially, one at a time). Typically,
 this protocol sends one byte of data at a time, and packages it in a frame structure.
+Recall, from last lab, that we noted that a program could be sent from your laptop
+to the pi side of the bootloader via the UART. The UART and TTY-USB  
+carry serial packets of data bi-directionally (receive/transmit) between the pi and laptop.
+
 Common frame structure:
 - START bit: Always low. Indicates serial communication has begun.
 - Data bits packet: Always follows start bit. Typically 8-bit data packet, but can range.
