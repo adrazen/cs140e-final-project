@@ -13,8 +13,7 @@ to control these GPIO pins as needed.
 
 #### So _how_ do we use the pi to configure the pins?
 
-(Note: all page numbers refer to the Broadcom BCM2835 document in the 
-`docs` directory: `BCM2835-ARM-Peripherals.annot.pdf`. Errata [here](https://elinux.org/BCM2835_datasheet_errata).)
+(Note: all page numbers refer to the Broadcom BCM2835 document: `/docs/BCM2835-ARM-Peripherals.annot.pdf`. Errata [here](https://elinux.org/BCM2835_datasheet_errata).)
 
 The r/pi, like most processors has a bunch of different devices it can
 control.  For example: the GPIO pins you use in lab 0 and lab 1. You
