@@ -18,7 +18,7 @@ like I was really getting my feet under me. Also, the challenge of writing a dev
 ##### 1. Importance of device memory barriers (i.e. `dev_barrier()`)
 Your `uart_init` function is no small piece of code. At this point, we are working 
 with multiple devices in a single function, accessing various memory spaces. For 
-example, you set the alternate function on the GPIO tx/rx pins by writing to the GPFSELn
+example, you set the alternate function on the GPIO tx/rx pins by writing to the `GPFSELn` function select
 register (1st peripheral device: GPIO), then on the Pi (2nd device) itself, you accessed the `AUXENB`
 register to enable another peripheral, the mini-UART (3rd device). Between all of these various
 memory access steps, it's important to set up **memory barriers**, ensuring that instructions
