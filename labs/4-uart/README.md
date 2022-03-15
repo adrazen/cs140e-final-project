@@ -10,6 +10,26 @@ can print out the entire system, look at each line of code, and should
 hopefully know why it is there and what it is doing.  Importantly you have
 reached that magic point of understanding where: there is nothing else.
 
+#### Understanding the UART (extremely cursory)
+UART - Universal Asynchronous Receiver/Transmitter - is a serial communication
+protocol (protocol for sending bits of data serially, one at a time). Typically,
+this protocol sends one byte of data at a time, and packages it in a frame structure.
+Common frame structure:
+- START bit: Always low. Indicates serial communication has begun.
+- Data bits packet: Always follows start bit. Typically 8-bit data packet, but can range.
+- STOP bit: Always follows data packet, high. Indicates end of frame.
+
+The pi uses a mini-UART which is mapped to two gpio pins for tx/rx (transmit/receive).
+Today you'll write code to initialize this UART in the correct configuration (frame size, 
+[baud rate](https://en.wikipedia.org/wiki/Baud)), as well
+as read received data, and write data to transmit!
+
+This lab will build off of the experience you gained in the `gpio` lab
+while working with the Broadcom doc. We will once again be leaning
+heavily on that doc `docs/BCM2835-ARM-Peripherals.annot.PDF`,
+and your newfound skills in parsing useful info
+from this type of hardware datasheet will be boundlessly useful here!
+
 *NOTE*:
   - Make sure you read through the [mini-UART cheatsheet](miniUART.md)
 
