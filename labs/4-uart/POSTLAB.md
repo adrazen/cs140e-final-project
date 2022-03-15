@@ -18,7 +18,17 @@ like I was really getting my feet under me. Also, the challenge of writing a dev
 ##### 1. Importance of memory barriers (e.g. `dev_barrier()`)
 
 
-##### 2. The "read-modify-write" pattern
+##### 2. The "read-modify-write" pattern (RMW)
+This phrase has probably been mentioned before/during this lab. At it's core, this is simply
+a method of preserving register values rather than clobbering them by doing a blunt write. 
+Let's look at the `AUXENB` Register as an example. The Broadcom doc notes that this register 
+"is used to enable the three modules; UART, SPI1, SPI2." Toggling one of the lower three
+bits will have a very large effect on one of these modules' states. So how do we turn enable our
+UART while ensuring we don't mess with the bits corresponding to the SPI modules? RMW!
+
+First, we read in the entire `AUXENB` register value. Then, we set the relevant UART bit (and ONLY the relevant bit) of that value.
+Then, we write the value back to the register. Read, modify, write! It's a crucial pattern, and learning
+when/when not to use it will come in very handy over these next few weeks!
 
 
 
