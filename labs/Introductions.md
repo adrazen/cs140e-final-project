@@ -443,7 +443,7 @@ At the end, your code should align with the following diagram of how the
 Page Table and Page Table Entries look in the ARMv6 vitual memory system:
 
 <table><tr><td>
-  <img src="12-vm/images/page-table-entry-diagram-no-values.png"/>
+  <img src="12-vm/images/page-table-entry-diagram-no-values.png" width="400"/>
 </td></tr></table>
 
 For the second function (controlling memory access permissions), the MMU 
@@ -538,7 +538,7 @@ this new process so that it can run.
 
 Diagram:
 <p float="left">
-  <img src="15-fat32/images/fat32-overview-diagram.png" width="700" />
+  <img src="15-fat32/images/fat32-overview-diagram.png" width="800" />
 </p>
 
 
