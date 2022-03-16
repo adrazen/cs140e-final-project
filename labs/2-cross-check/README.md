@@ -6,26 +6,29 @@ A goal of this course is that you will write every single line of
 (interesting) low level code you use.  A good result of this approach
 is that you will understand everything and, unlike most embedded or
 operating systems courses, there will not be a lot of opaque, magical
-code that you have no insight into, other than sense of unease that it
+code that you have no insight into, other than a sense of unease that it
 does important stuff beyond your ken.
 
 An obvious potential result of this strategy is that since you are writing
-all code your system depends on, a single bug can make the rest of the
-quarter miserable.
+all of the code your system depends on, a single bug can make the rest of 
+the quarter miserable.
 
 Today's lab uses simple implementations of several powerful ideas to
-check if your `gpio.c` code from last lab has bugs.
+check if your `gpio.c` code from last lab has any bugs.
 
 After completing the lab you will be able to check that your `gpio.c`
 code is effectively equivalent to everyone else's in the class by
 tracing all reads and writes it does and comparing them to everyone
 else's implementation.  If even one person gets it right, then showing
-equivalence means you got it right too.  And, nicely, automatically
-detect if any subsequent modifications you do break the code.
+equivalence means you got it right too.  Conveniently, this will also
+allow you to automatically detect if any subsequent modifications you
+make break the code.
 
-This lab is going to be the first time we leverage `cksum` (checksums) 
-as a cross-checking test mechanism for code correctness. `cksum` will
-continue to pop up in future lab verification so gaining an understanding
+This lab is going to be the first time we leverage (checksums) 
+as a cross-checking test mechanism for code correctness. We will use the
+`cksum` Unix command, which is a command that generates a checksum value 
+for a file or stream of data. The `cksum` command will continue to pop 
+up in future labs as a verification tool so gaining an understanding
 _now_ for why this method of verification is useful to us, will help 
 you later on as well! In short, `cksum` generates a 
 [CRC](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) hash for
