@@ -178,7 +178,7 @@ The scheduler would do this by moving Process A from the running set to
 the ready queue. Here is a diagram to model this:
 
 <table><tr><td>
-  <img src="labs/6-interrupts/images/process-lifecycle-diagram.png" width="700"/>
+  <img src="6-interrupts/images/process-lifecycle-diagram.png" width="700"/>
 </td></tr></table>
 
 The key idea with interrupts is that we can manage the execution of 
@@ -251,7 +251,7 @@ between the context of the regular C code and the context of the
 interrupt handler. Here is a diagram illustrating this:
 
 <table><tr><td>
-  <img src="labs/6-interrupts/images/interrupts-diagram.png" width="600"/>
+  <img src="6-interrupts/images/interrupts-diagram.png" width="600"/>
 </td></tr></table>
 
 #### 7-device-interrupts
@@ -443,7 +443,7 @@ At the end, your code should align with the following diagram of how the
 Page Table and Page Table Entries look in the ARMv6 vitual memory system:
 
 <table><tr><td>
-  <img src="labs/12-vm/images/page-table-entry-diagram-no-values.png"/>
+  <img src="12-vm/images/page-table-entry-diagram-no-values.png"/>
 </td></tr></table>
 
 For the second function (controlling memory access permissions), the MMU 
@@ -534,6 +534,14 @@ will have a pointer to the struct representing the next process that needs
 to run, and then will process to load up all of the relevent information for 
 this new process so that it can run. 
 
+#### 15-fat32
+
+Diagram:
+<p float="left">
+  <img src="15-fat32/images/fat32-overview-diagram.jpeg" width="200" />
+</p>
+
+
 #### 16-esp8266
 
 Today's lab is about setting up a simple networking protocol to connect your 
@@ -549,7 +557,7 @@ ESP8266-based boards. We will be using the ESP-01 variant, which is the first
 and simplest board using the ESP8266, and costs under three dollars. Here is what
 the ESP8266 looks like:
 <p float="left">
-  <img src="labs/16-esp8266/images/esp8266-simple-image.jpeg" width="200" />
+  <img src="16-esp8266/images/esp8266-simple-image.jpeg" width="200" />
 </p>
 
 In order to program our ESP8266 so that it can communicate with our computer, we 
@@ -598,7 +606,7 @@ For sending a HTTP response back to the client, you will want to use the HTTP
 protocol. Here is an outline of what a HTTP response looks like: 
 
 <table><tr><td>
-  <img src="labs/16-esp8266/images/http-response-format-diagram.png" width="600"/>
+  <img src="16-esp8266/images/http-response-format-diagram.png" width="600"/>
 </td></tr></table>
 
 For convenience, you can use the following valid HTTP response
