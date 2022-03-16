@@ -1,6 +1,6 @@
 ## Full Compilation of Introductions
 
-#### 1-gpio
+### 1-gpio
 
 The first lab was just setup.  Now we get to the fun part: you'll use
 the Broadcom document (`../../docs/BCM2835-ARM-Peripherals.annot.PDF`)
@@ -23,7 +23,7 @@ a given GPIO pin on your pi between input/output, and on(high)/off(low).
 Future labs will then be able to rely on these functions you've written
 to do more exciting things!
 
-#### 2-cross-check
+### 2-cross-check
 
 A goal of this course is that you will write every single line of
 (interesting) low level code you use.  A good result of this approach
@@ -72,7 +72,7 @@ correct through cross-checking.
 After checking off today, you can feel confident that your code is
 _at least as correct_ as everyone else's in this class!
 
-#### 3-bootloader
+### 3-bootloader
 
 The next few labs are constructed to remove all magic from your pi setup
 by going downward and having you write and replace all of our code.
@@ -117,7 +117,7 @@ able to drop in your `gpio.o` and your `uart.o` and replace almost all
 of our hardware-level code.
 
 
-#### 4-uart
+### 4-uart
 
 By the end of this lab, you'll have written your own device driver for
 the pi's mini-UART hardware, which is what communicates with the TTY-USB
@@ -155,7 +155,7 @@ from this type of hardware datasheet will be boundlessly useful here!
   - Make sure you read through the [mini-UART cheatsheet](miniUART.md)
 
 
-#### 6-interrupts
+### 6-interrupts
 
 In this lab, we will be working on implementing **interrupts**, which are
 at the heart of operating system design. The kernel is responsible for 
@@ -178,7 +178,7 @@ The scheduler would do this by moving Process A from the running set to
 the ready queue. Here is a diagram to model this:
 
 <table><tr><td>
-  <img src="6-interrupts/images/process-lifecycle-diagram.png" width="700"/>
+  <img src="6-interrupts/images/process-lifecycle-diagram.png" width="500"/>
 </td></tr></table>
 
 The key idea with interrupts is that we can manage the execution of 
@@ -251,10 +251,10 @@ between the context of the regular C code and the context of the
 interrupt handler. Here is a diagram illustrating this:
 
 <table><tr><td>
-  <img src="6-interrupts/images/interrupts-diagram.png" width="600"/>
+  <img src="6-interrupts/images/interrupts-diagram.png" width="500"/>
 </td></tr></table>
 
-#### 7-device-interrupts
+### 7-device-interrupts
 
 In today's lab, we will build off of the previous lab where we implemented
 "general" interrupts. In today's lab, we will focus specifically on device 
@@ -277,7 +277,7 @@ for a given period of time and store them in the queue. Once we do that,
 we can compare them with what we expect to have seen to make sure our
 interrupts line up correctly. 
 
-#### 9-debug-hardware
+### 9-debug-hardware
 
 Any systems programmer knows the importance of debugging tools such as
 GDB and LLDB. These tools are especially useful for debugging memory
@@ -328,7 +328,7 @@ corruption quickly:
       counter value causing the problem (or if you're fancy, a backtrace)
       along with any other information you would find useful.
 
-#### 10-low-level
+### 10-low-level
 
 The last few labs have involved writing some pretty tricky code. Today's lab
 is more of an "odds and ends" types of lab that covers simple, but very 
@@ -358,7 +358,7 @@ on building:
    backtrace implementation that walks back up the stack and gets the current
    callers. 
 
-#### 11-user-process
+### 11-user-process
 
 Today you're going to do a wildly useful trick - equivalence checking
 with single stepping - for ruthlessly detecting
@@ -409,7 +409,7 @@ and replace our staff version with
 your own. This lab builds on the prior interrupts and debugging labs and will 
 prepare us to dive into virtual memory.
 
-#### 12-vm
+### 12-vm
 
 A key part of a functioning operating system is a virtual memory system 
 that abstracts memory access logic away from the user program. When a 
@@ -461,7 +461,7 @@ abort the access request.
 The end goal of this lab will be to get a simple "hello world" version of 
 virtual memory working. 
 
-#### 13-vm-ops
+### 13-vm-ops
 
 In order for a virtual memory system to work correctly, the operating system
 needs to be able to successfully communicate with the hardware. Even if you 
@@ -513,7 +513,7 @@ Table Register. When modifying these registers, you only have two options:
 reading,cand writing. Ultimately, this limits the set of possible things 
 you can do.
 
-#### 14-process+vm
+### 14-process+vm
 
 Though virtual memory can be thought of as a standalone system, there 
 needs to be an effective way to incorporate the logic of virtual memory 
@@ -534,11 +534,11 @@ will have a pointer to the struct representing the next process that needs
 to run, and then will process to load up all of the relevent information for 
 this new process so that it can run. 
 
-#### 15-fat32
+### 15-fat32
 
 Diagram:
 <p float="left">
-  <img src="15-fat32/images/fat32-overview-diagram.jpeg" width="200" />
+  <img src="15-fat32/images/fat32-overview-diagram.png" width="200" />
 </p>
 
 
@@ -557,7 +557,7 @@ ESP8266-based boards. We will be using the ESP-01 variant, which is the first
 and simplest board using the ESP8266, and costs under three dollars. Here is what
 the ESP8266 looks like:
 <p float="left">
-  <img src="16-esp8266/images/esp8266-simple-image.jpeg" width="200" />
+  <img src="16-esp8266/images/esp8266-simple-image.jpeg" width="500" />
 </p>
 
 In order to program our ESP8266 so that it can communicate with our computer, we 
