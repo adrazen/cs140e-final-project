@@ -18,19 +18,18 @@ For most of us, our last tangible experience with assembly was in CS107 when
 doing Binary Bomb/SecureVault. The resulting relationship with assembly is either one of
 love or one of hate. In this lab, we learn the importance of using assembly, 
 and why sometimes we have no other option _but_ to use assembly. There is some
-functionality that it is simply not possible to express in C. In the case of
+functionality that it is simply not possible to express in C. For
 interrupts, it's important to write them in assembly in order to be sure that
 we preserve all registers correctly. 
 
-In the case of interrupts, this is especially the case because we need to 
-work with special registers that are otherwise not available in C, and we 
+This is especially the case because with interrupts you're working with 
+special registers that are otherwise not available in C, and we 
 need to guarantee that instructions execute in the order that we want them
-to. In the case of interrupts, we need to be able to access stack pointers 
-and registers.
+to.
 
 With standard C-code, we can't guarantee that the compiled version of the code
 is exactly what we expect it to be. This is because, at times, the compiler will
-try to optimize code and be more efficient. In most of the programs we have 
+try to optimize code. In most of the programs we have 
 written thus far, this isn't an issue. However, as we progress through the
 code, we will need to rely on assembly more in order to be able to write 
 functional low-level code. 
