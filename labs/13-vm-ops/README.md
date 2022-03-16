@@ -9,7 +9,7 @@ needs to be correctly configured and all of the necessary variables need to
 be in the right place. You can think of this lab as getting all the ingredients
 in the right place, before following the recipe and cooking the meal. (Our 
 last lab focused on curating the recipe, and this lab will focus on getting
-the ingredients in the right place in the right qunatities.)
+the ingredients in the right place in the right quantities.)
 
 Here are the three key steps to correctly configuring the MMU:
 
