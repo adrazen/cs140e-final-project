@@ -5,9 +5,8 @@
 By the end of this lab, you'll have written your own device driver for
 the pi's mini-UART hardware, which is what communicates with the TTY-USB
 device you plug into your laptop.  This driver is the last "major" piece
-of the pi runtime that you have not built yourself.  At this point, you
-can print out the entire system, look at each line of code, and should
-hopefully know why it is there and what it is doing.  Importantly you have
+of the pi runtime that you have not built yourself.  At this point, ideally you can look at each line of code in the system, and should
+know why it is there and what it is doing.  Importantly you have
 reached that magic point of understanding where: there is nothing else.
 
 #### Understanding the UART (extremely cursory)
