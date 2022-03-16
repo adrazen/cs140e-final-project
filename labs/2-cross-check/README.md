@@ -24,8 +24,8 @@ equivalence means you got it right too.  Conveniently, this will also
 allow you to automatically detect if any subsequent modifications you
 make break the code.
 
-This lab is going to be the first time we leverage (checksums) 
-as a cross-checking test mechanism for code correctness. We will use the
+This lab is going to be the first time we leverage checksums as a 
+cross-checking test mechanism for code correctness. We will use the
 `cksum` Unix command, which is a command that generates a checksum value 
 for a file or stream of data. The `cksum` command will continue to pop 
 up in future labs as a verification tool so gaining an understanding
@@ -33,8 +33,9 @@ _now_ for why this method of verification is useful to us, will help
 you later on as well! In short, `cksum` generates a 
 [CRC](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) hash for
 a given file. We'll save our test outputs to `*.out` files and then
-run `cksum` on those, to ensure that everyone's read and write calls 
-match up (i.e. everyone's `cksum` values are identical).
+run `cksum` on those. This will generate a single number that we can 
+use to ensure that everyone's read and write calls match up (i.e. 
+everyone's `cksum` values are identical).
 
 This lab will also ask you to generalize your `gpio.c` code from last
 week. In particular - recall the purpose of the GPIO Function Select
