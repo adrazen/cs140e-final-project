@@ -22,7 +22,7 @@ explanation of the _why_. In the operating systems world, an **image** is a bina
 form of an operating system that can be loaded onto a device. In the embedded world, 
 images are eVeRyThInG. 
 
-More speficially, the `kernel.img` file is an image file representing the Linux 
+More specifically, the `kernel.img` file is an image file representing the Linux 
 kernel (hence the name). You can download the `kernel.img` file onto the pi in order 
 to boot the pi into becoming an operating system. Neat!
 
@@ -63,12 +63,12 @@ important and can lead to some nasty and hard to track down bugs. In fact, some
 implementations will work with stack allocation when doing initial testing (such 
 as running the `read-test` in `prelab-tests`) but will only start causining 
 problems when they are run in the full bootloader program itself. For those of you 
-who ran into this issue, you will likely have run into a not-so-pleasent error: a 
+who ran into this issue, you will likely have seen a not-so-pleasent error: a 
 SEGFAULT. There are a few possible issues with using stack allocation instead of 
 heap allocation. 
 
 The main issue with a stack allocated string is that it may go out of scope. 
-Variables created on the stack will go out of scope and are automatically deallocated.
+When variables created on the stack go out of scope they are automatically deallocated.
 Meanwhile, variables on the heap must be destroyed manually and never go out of scope.
 
 ##### 3. Empty Strings for Days
@@ -96,8 +96,8 @@ One of the most exciting part of today's lab was also one of the most challengin
 parts of today's lab: we were able to get two separate programs to talk to one another! 
 In order to make this happen, we defined a communication protocol between the Pi side
 and the Unix side. This means that whenever the Pi sends data to the Unix side, the Unix
-side needs to be ready to recieve that data and process it correctly. When the Unix side
-responds back to the Pi side, the Pi side needs to be ready to recieve that response and
+side needs to be ready to receive that data and process it correctly. When the Unix side
+responds back to the Pi side, the Pi side needs to be ready to receive that response and
 process it correctly. Following this protocol means that both sides need to accept data
 from the other side (even if they aren't interested in the data that the other side 
 sends them) and they need to send data only when the other side is ready and willing to
@@ -138,11 +138,11 @@ using the following diagram:
                                        ouput to the terminal.
      =======================================================
      
-Second, when ensure that we read data appropriately. In the case of the Unix side, it 
+Second, we must ensure that we read protocols appropriately. In the case of the Unix side, it 
 uses the `get_op()` function to read a single 4-byte word from the Unix side. Meanwhile, 
 the Pi side uses `boot_get32()` to read a single word from the Pi side. 
 
-The final step, is to verify that data we recieved is indeed what we expect. Whenever
+The final step, is to verify that data we received is indeed what we expect. Whenever
 we define a communication protocol, we should not trust _anything_ the other side does. 
 This means that we need to verify everything that the other side does and ensure that 
 they are sending us data in the right order and that the data they are sending us is
