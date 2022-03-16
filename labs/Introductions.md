@@ -538,7 +538,7 @@ this new process so that it can run.
 
 Diagram:
 <p float="left">
-  <img src="15-fat32/images/fat32-overview-diagram.png" width="200" />
+  <img src="15-fat32/images/fat32-overview-diagram.png" width="500" />
 </p>
 
 
@@ -557,7 +557,7 @@ ESP8266-based boards. We will be using the ESP-01 variant, which is the first
 and simplest board using the ESP8266, and costs under three dollars. Here is what
 the ESP8266 looks like:
 <p float="left">
-  <img src="16-esp8266/images/esp8266-simple-image.jpeg" width="500" />
+  <img src="16-esp8266/images/esp8266-simple-image.jpeg" width="200" />
 </p>
 
 In order to program our ESP8266 so that it can communicate with our computer, we 
