@@ -77,9 +77,9 @@ If no coprocessor responds, this this instruction is considered to be
 undefined, and an Undefined Instruction exception occurs. 
 
 -`_software_interrupt_asm`: this occurs when a program running at the user
-level generates and exception condition, and then enters into supervisor mode. 
+level generates an exception condition, and then enters into supervisor mode. 
 (You will learn more about the distinction between user mode and supervisor
-mode in a later lab: `11-user-processes`). A software interrup allows a user 
+mode in a later lab: `11-user-processes`). A software interrupt allows a user 
 program to communicate with the kernel or to invoke system calls, especially 
 during error or exception handling.
 
@@ -99,8 +99,8 @@ with a data access. This normally happens when a program is trying to read
 or write to an illegal memory location. 
 
 -`_interrupt_asm`: this occurs when there is an interrupt that originates from
-the hardware. A hardware interrupt is used to handle events such as recieving
-datat from a modem or network card, key presses, or mouse movements. 
+the hardware. A hardware interrupt is used to handle events such as receiving
+data from a modem or network card, key presses, or mouse movements. 
 
 Given the many different types of interrupts that exist, the processor needs some
 way of dealing with multiple interrupts at the same time. To do this, the processor
